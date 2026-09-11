@@ -1,0 +1,28 @@
+bin/pacman-db-upgrade text eol=lf
+bin/pacman-key text eol=lf
+
+pacman/pacman.conf text eol=lf
+pacman/pacman.d/* text eol=lf
+
+*.profile text eol=lf
+*.bashrc text eol=lf
+*.bash text eol=lf
+*.sh text eol=lf
+
+*.pwsh text eol=crlf
+*.ps1 text eol=crlf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+*.exe binary
+*.com binary
+*.dll binary
+
+*.bmp binary
+*.ico binary
+*.png binary
+*.jpg binary
+*.gif binary
+*.tif binary
+
+*.gpg binary
