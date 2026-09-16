@@ -370,21 +370,17 @@ a) choco:
 # Attribution
 
 
-This project is a fork of [git-win](https://github.com/korningf/git-win).
-
-
-
 *Stephane Korning* (stefuss@yahoo.com) for the idea and impetus to port pacman to gitbash. 
 
 
 
-*Andre Stenveld* for his simplified pacman installation 
+*Andre Stenveld* for his greatly simplified Gitbash Pacman installation. 
 
 [pacman-on-git-for-windows](https://gist.github.com/AndreSteenveld/cb6662c93c8323795c5fd347defb8976)
 
 
 
-*Alex Sarmiento* and *David Gleba* for an actual implementation in their GitPortable-Pacman.
+*Alex Sarmiento* and *David Gleba* for the original GitPortable-Pacman.
 
 [gitportable-pacman](https://github.com/dgleba/gitportable-pacman)
 
