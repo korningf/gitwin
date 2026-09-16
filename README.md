@@ -68,12 +68,21 @@ We can clone its `pacman` package management facility and reintegrate it into gi
 
 
 
-* Set powershell exevcution policy to bypass for the following scripts.
+# Powershell
+
+Use Powershell 7 which provides core features like the ternary conditional assignment operator.
+
+* Set powershell execution policy to bypass to be able to execute scripts.
 
 ```pwsh
     Set-ExecutionPolicy Bypass -Scope Process -Force;
 ```
 
+* Powershell 7 ships with a JSON processor, but we want YAML as well.
+
+```pwsh
+    Install-Module powershell-yaml
+```
 
 
 
@@ -98,8 +107,6 @@ $env:ChocolateyInstall="$InstallDir"
 # https://chocolatey.org/install
 iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 ```    
-
-
 
 
 
@@ -138,10 +145,6 @@ Modern package managers use SSL/TLS and GPG keyrings to securely pull packages f
 The Git OpenSSL libraries must be able to talk to Windows Credential manager and pull certificates.
 
 For this reason, on a managed desktop machine it is best to install Git with the default settings.
-
-
-
-# GitBash
 
 
 * a) *winget default: (@skip - use custom)*
