@@ -114,24 +114,31 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocola
 
 
 
-* a) *winget default: (@skip - use custom)*
+* a) *winget default: (@skip - use choco)*
 
     winget install --id=Microsoft.Sysinternals.Suite -e
 
 
-* b) *choco standard: (@skip - use custom)*
-
-    choco install -y sysinternals
-
-
-* c) choco custom: (@use-this! )
+* b) *choco admin: (@skip - use custom)*
 
 ```pwsh
     mkdir -p c:\\syswin\\bin
     
-    choco install -y sysinternals  --params "/InstallDir:c:\\syswin\\bin"
+    choco install -y --force sysinternals  --params "/InstallDir:c:\\syswin\\bin"
     
     setx SYSWIN "c:/syswin"
+```
+
+
+
+* c) choco user: (@user-space)
+
+```pwsh
+    mkdir -p "$env:APPDATA\\..\\Local\\Programs\\syswin"
+    
+    choco install -y --force sysinternals  --params "/InstallDir:c:\\syswin\\bin"
+    
+    setx SYSWIN "$env:APPDATA\\..\\Local\\Programs\\syswin"
 ```
 
 
@@ -154,10 +161,18 @@ For this reason, on a managed desktop machine it is best to install Git with the
 
 * b) *choco standard: (@skip - use custom)*
 
-    choco install -y git
+```pwsh
+    mkdir -p '\Program Files\Git`
+    
+    choco install -y git --force --params "/SChannel /Symlinks /PseudoConsoleSupport"
+
+    junction c:/gitwin '\Program Files\Git`
+
+    setx MSYS "c:/gitwin  winsymlinks:native"
+```
 
 
-* c) choco custom: (@use-this! )
+* c) choco user: (@user-space )
 
 
 ```pwsh
@@ -166,6 +181,7 @@ For this reason, on a managed desktop machine it is best to install Git with the
     choco install -y git --force --params "/SChannel /Symlinks /PseudoConsoleSupport"
 
     junction c:/gitwin $env:APPDATA/../Local/Programs/Git
+
     setx MSYS "c:/gitwin  winsymlinks:native"
 ```
 
