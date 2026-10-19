@@ -162,11 +162,11 @@ For this reason, on a managed desktop machine it is best to install Git with the
 * b) *choco standard: (@skip - use custom)*
 
 ```pwsh
-    mkdir -p '\Program Files\Git`
+    mkdir -p '\Program Files\Git'
     
     choco install -y git --force --params "/SChannel /Symlinks /PseudoConsoleSupport"
 
-    junction c:/gitwin '\Program Files\Git`
+    junction c:/gitwin '\Program Files\Git'
 
     setx MSYS "c:/gitwin  winsymlinks:native"
 ```
