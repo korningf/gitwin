@@ -241,7 +241,7 @@ For this reason, on a managed desktop, it is best to install a managed machine-s
 
 * b) winget system-wide:  (@fails - needs admin)
 
-    winget install -e --id Python.Python.3.10 --scope machine
+    winget install -e --id Python.Python.3.13 --scope machine
 
 
 * c) winget user-space:  (@use-this! - local user)
@@ -253,8 +253,10 @@ For this reason, on a managed desktop, it is best to install a managed machine-s
 add local pip scripts and site-packages to your %PATH% :
 
 ```text
-    %USERPROFILE%\AppData\Roaming\Python\Python310\Scripts
-    %USERPROFILE%\AppData\Roaming\Python\Python310\Site-packages    
+    %USERPROFILE%\AppData\..\Local\Programs\Python\Python313\Scripts
+    %USERPROFILE%\AppData\..\Local\Programs\Python\Python313\Site-Packages
+    %USERPROFILE%\AppData\Roaming\Python\Python313\Scripts
+    %USERPROFILE%\AppData\Roaming\Python\Python313\Site-packages    
 ```
 
 
